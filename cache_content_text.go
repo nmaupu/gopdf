@@ -47,18 +47,14 @@ func (c *cacheContentText) isSame(cache cacheContentText) bool {
 	}
 
 	// if both colors are nil we assume them equal
-	if ((c.textColor == nil && cache.textColor == nil) ||
+	return ((c.textColor == nil && cache.textColor == nil) ||
 		(c.textColor != nil && c.textColor.equal(cache.textColor))) &&
 		c.grayFill == cache.grayFill &&
 		c.fontCountIndex == cache.fontCountIndex &&
 		c.fontSize == cache.fontSize &&
 		c.fontStyle == cache.fontStyle &&
 		c.setXCount == cache.setXCount &&
-		c.y == cache.y {
-		return true
-	}
-
-	return false
+		c.y == cache.y
 }
 
 func (c *cacheContentText) setPageHeight(pageheight float64) {
